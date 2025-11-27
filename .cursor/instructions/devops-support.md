@@ -97,6 +97,7 @@ Example from `<topic>/examples/config-sample.yaml`:
 [Code snippet]
 
 See also: `<topic>/runbooks/procedure.md` for [operational steps]
+See also: `<topic>/plans/migration-plan.md` for [migration strategy]
 ```
 
 **Example:**
@@ -108,6 +109,7 @@ Example from `kubernetes/examples/deployment.yaml`:
 [deployment configuration]
 
 See also: `kubernetes/runbooks/rollback-procedure.md` for rollback steps
+See also: `kubernetes/plans/upgrade-to-v1.28.md` for upgrade planning
 ```
 
 ### ANSWER QUALITY STANDARDS
@@ -131,19 +133,21 @@ If docs only partially address the question:
 ### Understanding the Docs Structure
 
 **Repository Organization:**
-The DevOps docs repository is organized by **topics**, where each topic (e.g., `kubernetes/`, `rabbitmq/`, `kafka/`) contains three standard subdirectories:
+The DevOps docs repository is organized by **topics**, where each topic (e.g., `kubernetes/`, `rabbitmq/`, `kafka/`) contains four standard subdirectories:
 
 ```
 <topic>/
 ├── docs/         # Documentation files (markdown, guides, references)
 ├── examples/     # Code samples, configuration examples, templates
-└── runbooks/     # Step-by-step operational procedures
+├── runbooks/     # Step-by-step operational procedures
+└── plans/        # Migration plans, implementation plans, research
 ```
 
 **Search Strategy by Structure:**
 - **For conceptual questions**: Search `<topic>/docs/`
 - **For code/config samples**: Search `<topic>/examples/`
 - **For operational procedures**: Search `<topic>/runbooks/`
+- **For planning/strategy questions**: Search `<topic>/plans/`
 - **For multiple topics**: Search across relevant topic directories
 
 ### Documentation Types by Location
@@ -168,6 +172,13 @@ The DevOps docs repository is organized by **topics**, where each topic (e.g., `
 - Maintenance procedures
 - Common tasks and workflows
 
+**In `<topic>/plans/`:**
+- Migration plans and strategies
+- Implementation plans and roadmaps
+- Research documents and findings
+- Design proposals and RFCs
+- Upgrade and rollout plans
+
 ## Response Workflow
 
 ### 1. Question Analysis
@@ -178,6 +189,7 @@ When a user asks a question:
    - **Conceptual** (what-is, why, architecture) → Search `<topic>/docs/`
    - **Practical** (how-to, configuration) → Search `<topic>/docs/` and `<topic>/examples/`
    - **Operational** (procedures, troubleshooting) → Search `<topic>/runbooks/`
+   - **Strategic** (migration, implementation, research) → Search `<topic>/plans/`
 4. Identify any implicit sub-questions or prerequisites
 5. Note if question spans multiple topics
 
@@ -188,6 +200,7 @@ Conduct systematic search:
    - `<topic>/docs/` for explanations and guides
    - `<topic>/examples/` for code and config samples
    - `<topic>/runbooks/` for operational procedures
+   - `<topic>/plans/` for migration, implementation, and research docs
 3. Search for exact phrases and technical terms
 4. Search for related concepts and synonyms
 5. Check README files in topic root directories
@@ -241,6 +254,7 @@ From `<topic>/examples/sample-config.yaml`:
 
 ## Related Documentation
 - `<topic>/runbooks/procedure.md` - [Brief description]
+- `<topic>/plans/implementation.md` - [Brief description]
 - `<related-topic>/docs/integration.md` - [Brief description]
 
 ## Additional Notes
@@ -273,6 +287,7 @@ spec:
 
 ## Related Documentation
 - `kafka/runbooks/cluster-scaling.md` - Steps for scaling Kafka brokers
+- `kafka/plans/kubernetes-migration.md` - Migration plan from VM-based to Kubernetes
 - `kubernetes/docs/statefulsets.md` - StatefulSet configuration details
 
 ## Additional Notes
@@ -319,6 +334,7 @@ Config search: [service/tool] + "config" or "configuration"
 <topic>/docs/       # Conceptual info, guides, references
 <topic>/examples/   # Code samples, configs, templates  
 <topic>/runbooks/   # Step-by-step procedures
+<topic>/plans/      # Migration, implementation, research plans
 <topic>/README.md   # Topic overview
 ```
 
@@ -326,6 +342,8 @@ Config search: [service/tool] + "config" or "configuration"
 - Question about Kubernetes deployment → `kubernetes/docs/` and `kubernetes/examples/`
 - Kafka troubleshooting → `kafka/runbooks/` and `kafka/docs/`
 - RabbitMQ configuration → `rabbitmq/examples/` and `rabbitmq/docs/`
+- Kafka migration strategy → `kafka/plans/` for migration plans
+- RabbitMQ upgrade plan → `rabbitmq/plans/` for upgrade documentation
 - Cross-topic (e.g., Kafka + Kubernetes) → Search both `kafka/` and `kubernetes/` directories
 
 **Multi-Topic Searches:**
