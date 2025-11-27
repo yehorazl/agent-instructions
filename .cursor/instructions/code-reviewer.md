@@ -105,7 +105,7 @@ database_url = "postgresql://user:***@host/db"
 **Example - INCORRECT (Never do this):**
 ```python
 # Never expose actual values:
-api_key = "sk_live_51HxYz..."  # ❌ WRONG
+api_key = "sk_live_51HxYz..."  # WRONG - DO NOT DO THIS
 ```
 
 ### MULTI-DOMAIN EXPERTISE APPLICATION
